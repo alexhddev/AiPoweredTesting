@@ -1,0 +1,396 @@
+2026-03-18 06:00:01.112 [main] INFO  com.valentino.Application - Application starting up, version 3.8.2
+2026-03-18 06:00:01.234 [main] INFO  com.valentino.config.AppConfig - Loading configuration from /etc/valentino/application.yml
+2026-03-18 06:00:01.301 [main] INFO  com.valentino.config.AppConfig - Active profiles: [production]
+2026-03-18 06:00:01.455 [main] INFO  com.valentino.db.ConnectionPoolManager - Initializing HikariCP connection pool: maxPoolSize=20, minIdle=5, connectionTimeout=30000ms
+2026-03-18 06:00:01.812 [main] INFO  com.valentino.db.ConnectionPoolManager - Connection pool initialized successfully. Active: 0, Idle: 5, Total: 5
+2026-03-18 06:00:02.003 [main] INFO  com.valentino.cache.RedisCacheManager - Connected to Redis cluster at redis-primary.internal:6379
+2026-03-18 06:00:02.105 [main] INFO  com.valentino.messaging.KafkaConsumerService - Subscribing to topics: [orders, inventory-updates, user-events]
+2026-03-18 06:00:02.210 [main] INFO  com.valentino.web.ServerBootstrap - Embedded Tomcat started on port 8443 (https)
+2026-03-18 06:00:02.214 [main] INFO  com.valentino.Application - Application started in 1.102 seconds
+2026-03-18 06:00:05.001 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:00:05.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 0, Idle: 5, Waiting: 0, Total: 5
+2026-03-18 06:00:12.441 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 42ms userId=null ip=10.0.3.44
+2026-03-18 06:00:12.887 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 31ms userId=8821 ip=10.0.3.44
+2026-03-18 06:00:13.102 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - GET /api/v2/products/774 200 18ms userId=8821 ip=10.0.3.44
+2026-03-18 06:00:14.330 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 24ms userId=8821 ip=10.0.3.44
+2026-03-18 06:00:14.556 [kafka-consumer-1] INFO  com.valentino.messaging.InventoryConsumer - Received inventory update: productId=1102, qty=342
+2026-03-18 06:00:15.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 1, Idle: 4, Waiting: 0, Total: 5
+2026-03-18 06:00:18.220 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 187ms userId=8821 ip=10.0.3.44
+2026-03-18 06:00:18.225 [http-nio-8443-exec-5] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0001 created successfully for userId=8821, total=$47.95
+2026-03-18 06:00:18.301 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0001
+2026-03-18 06:00:19.780 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - GET /api/v2/users/8821/orders 200 53ms userId=8821 ip=10.0.3.44
+2026-03-18 06:00:22.115 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 39ms userId=null ip=10.0.5.18
+2026-03-18 06:00:23.654 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - GET /api/v2/products?category=beans 200 27ms userId=4417 ip=10.0.5.18
+2026-03-18 06:00:25.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:00:25.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 0, Idle: 5, Waiting: 0, Total: 5
+2026-03-18 06:00:27.811 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 203ms userId=4417 ip=10.0.5.18
+2026-03-18 06:00:27.820 [http-nio-8443-exec-9] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0002 created successfully for userId=4417, total=$29.99
+2026-03-18 06:00:28.001 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0002
+2026-03-18 06:00:31.443 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - GET /api/v2/products/331 200 15ms userId=4417 ip=10.0.5.18
+2026-03-18 06:00:32.100 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 44ms userId=null ip=10.0.7.92
+2026-03-18 06:00:33.920 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 29ms userId=12003 ip=10.0.7.92
+2026-03-18 06:00:35.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 1, Idle: 5, Waiting: 0, Total: 6
+2026-03-18 06:00:37.551 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 20ms userId=12003 ip=10.0.7.92
+2026-03-18 06:00:38.222 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 22ms userId=12003 ip=10.0.7.92
+2026-03-18 06:00:39.117 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 211ms userId=12003 ip=10.0.7.92
+2026-03-18 06:00:39.122 [http-nio-8443-exec-5] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0003 created successfully for userId=12003, total=$85.44
+2026-03-18 06:00:39.200 [http-nio-8443-exec-5] WARN  com.valentino.orders.InventoryReservationService - Slow inventory reservation for orderId=ORD-20260318-0003: 148ms (threshold: 100ms)
+2026-03-18 06:00:39.310 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0003
+2026-03-18 06:00:41.807 [kafka-consumer-1] INFO  com.valentino.messaging.InventoryConsumer - Received inventory update: productId=331, qty=87
+2026-03-18 06:00:42.319 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - GET /api/v2/products?search=magic 200 34ms userId=12003 ip=10.0.7.92
+2026-03-18 06:00:45.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:00:45.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 1, Idle: 5, Waiting: 0, Total: 6
+2026-03-18 06:00:48.903 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 37ms userId=null ip=10.0.2.61
+2026-03-18 06:00:49.445 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 26ms userId=5590 ip=10.0.2.61
+2026-03-18 06:00:51.312 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 195ms userId=5590 ip=10.0.2.61
+2026-03-18 06:00:51.318 [http-nio-8443-exec-9] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0004 created successfully for userId=5590, total=$14.50
+2026-03-18 06:00:51.400 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0004
+2026-03-18 06:00:53.102 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - GET /api/v2/users/5590/profile 200 19ms userId=5590 ip=10.0.2.61
+2026-03-18 06:00:55.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 1, Idle: 5, Waiting: 0, Total: 6
+2026-03-18 06:00:57.221 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - PUT /api/v2/users/5590/profile 200 41ms userId=5590 ip=10.0.2.61
+2026-03-18 06:00:59.113 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 40ms userId=null ip=10.0.4.15
+2026-03-18 06:01:00.889 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 30ms userId=7321 ip=10.0.4.15
+2026-03-18 06:01:02.444 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 19ms userId=7321 ip=10.0.4.15
+2026-03-18 06:01:03.112 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 21ms userId=7321 ip=10.0.4.15
+2026-03-18 06:01:04.558 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 199ms userId=7321 ip=10.0.4.15
+2026-03-18 06:01:04.563 [http-nio-8443-exec-6] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0005 created successfully for userId=7321, total=$62.30
+2026-03-18 06:01:04.700 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0005
+2026-03-18 06:01:05.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:01:05.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 1, Idle: 5, Waiting: 0, Total: 6
+2026-03-18 06:01:08.445 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 36ms userId=null ip=10.0.8.33
+2026-03-18 06:01:09.112 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - GET /api/v2/products?category=beans 200 28ms userId=9104 ip=10.0.8.33
+2026-03-18 06:01:11.893 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 188ms userId=9104 ip=10.0.8.33
+2026-03-18 06:01:11.898 [http-nio-8443-exec-9] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0006 created successfully for userId=9104, total=$33.75
+2026-03-18 06:01:12.001 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0006
+2026-03-18 06:01:14.303 [kafka-consumer-1] INFO  com.valentino.messaging.InventoryConsumer - Received inventory update: productId=774, qty=218
+2026-03-18 06:01:15.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 2, Idle: 5, Waiting: 0, Total: 7
+2026-03-18 06:01:17.220 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - GET /api/v2/contact 200 11ms userId=null ip=10.0.6.89
+2026-03-18 06:01:18.991 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/contact 200 63ms userId=null ip=10.0.6.89
+2026-03-18 06:01:18.995 [http-nio-8443-exec-1] INFO  com.valentino.contact.ContactService - Contact form submitted: email=customer@example.com, subject="Order inquiry"
+2026-03-18 06:01:21.558 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 38ms userId=null ip=10.0.3.44
+2026-03-18 06:01:22.770 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - GET /api/v2/users/8821/orders 200 49ms userId=8821 ip=10.0.3.44
+2026-03-18 06:01:24.112 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - GET /api/v2/orders/ORD-20260318-0001 200 32ms userId=8821 ip=10.0.3.44
+2026-03-18 06:01:25.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:01:25.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 2, Idle: 5, Waiting: 0, Total: 7
+2026-03-18 06:01:28.900 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 41ms userId=null ip=10.0.9.12
+2026-03-18 06:01:29.441 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 27ms userId=15502 ip=10.0.9.12
+2026-03-18 06:01:31.220 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 23ms userId=15502 ip=10.0.9.12
+2026-03-18 06:01:32.778 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 206ms userId=15502 ip=10.0.9.12
+2026-03-18 06:01:32.783 [http-nio-8443-exec-8] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0007 created successfully for userId=15502, total=$22.00
+2026-03-18 06:01:32.801 [http-nio-8443-exec-8] WARN  com.valentino.orders.InventoryReservationService - Slow inventory reservation for orderId=ORD-20260318-0007: 132ms (threshold: 100ms)
+2026-03-18 06:01:32.900 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0007
+2026-03-18 06:01:35.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 2, Idle: 5, Waiting: 0, Total: 7
+2026-03-18 06:01:37.119 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/signup 201 88ms userId=null ip=10.0.1.77
+2026-03-18 06:01:37.125 [http-nio-8443-exec-9] INFO  com.valentino.users.UserRegistrationService - New user registered: userId=15601, email=newuser@example.com
+2026-03-18 06:01:38.441 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 26ms userId=15601 ip=10.0.1.77
+2026-03-18 06:01:40.009 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 18ms userId=15601 ip=10.0.1.77
+2026-03-18 06:01:41.115 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 192ms userId=15601 ip=10.0.1.77
+2026-03-18 06:01:41.120 [http-nio-8443-exec-2] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0008 created successfully for userId=15601, total=$19.99
+2026-03-18 06:01:41.200 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0008
+2026-03-18 06:01:43.881 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 43ms userId=null ip=10.0.5.18
+2026-03-18 06:01:44.555 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - GET /api/v2/users/4417/orders 200 51ms userId=4417 ip=10.0.5.18
+2026-03-18 06:01:45.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:01:45.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 2, Idle: 5, Waiting: 0, Total: 7
+2026-03-18 06:01:48.773 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders/ORD-20260318-0002/cancel 200 74ms userId=4417 ip=10.0.5.18
+2026-03-18 06:01:48.774 [http-nio-8443-exec-5] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0002 cancelled by userId=4417
+2026-03-18 06:01:48.810 [http-nio-8443-exec-5] ERROR com.valentino.orders.RefundService - Failed to process refund for ORD-20260318-0002: payment gateway timeout after 5000ms
+2026-03-18 06:01:48.811 [http-nio-8443-exec-5] INFO  com.valentino.orders.RefundService - Refund for ORD-20260318-0002 queued for retry (attempt 1/3)
+2026-03-18 06:01:49.112 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.cancelled event for ORD-20260318-0002
+2026-03-18 06:01:52.330 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - GET /api/v2/products/1102 200 14ms userId=4417 ip=10.0.5.18
+2026-03-18 06:01:53.209 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 39ms userId=null ip=10.0.3.44
+2026-03-18 06:01:55.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 3, Idle: 5, Waiting: 0, Total: 8
+2026-03-18 06:01:57.441 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 31ms userId=8821 ip=10.0.3.44
+2026-03-18 06:01:58.112 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 20ms userId=8821 ip=10.0.3.44
+2026-03-18 06:01:59.445 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 22ms userId=8821 ip=10.0.3.44
+2026-03-18 06:02:01.223 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - DELETE /api/v2/cart/items/3 200 16ms userId=8821 ip=10.0.3.44
+2026-03-18 06:02:02.889 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 218ms userId=8821 ip=10.0.3.44
+2026-03-18 06:02:02.894 [http-nio-8443-exec-2] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0009 created successfully for userId=8821, total=$55.80
+2026-03-18 06:02:03.010 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0009
+2026-03-18 06:02:05.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:02:05.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 3, Idle: 5, Waiting: 0, Total: 8
+2026-03-18 06:02:07.120 [scheduler-2] INFO  com.valentino.orders.RefundRetryJob - Retrying refund for ORD-20260318-0002 (attempt 2/3)
+2026-03-18 06:02:07.445 [scheduler-2] INFO  com.valentino.orders.RefundService - Refund processed successfully for ORD-20260318-0002, amount=$29.99
+2026-03-18 06:02:09.771 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 42ms userId=null ip=10.0.10.5
+2026-03-18 06:02:10.223 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - GET /api/v2/products?category=seeds 200 33ms userId=20100 ip=10.0.10.5
+2026-03-18 06:02:12.554 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 19ms userId=20100 ip=10.0.10.5
+2026-03-18 06:02:13.221 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 197ms userId=20100 ip=10.0.10.5
+2026-03-18 06:02:13.226 [http-nio-8443-exec-6] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0010 created successfully for userId=20100, total=$41.25
+2026-03-18 06:02:13.400 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0010
+2026-03-18 06:02:15.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 3, Idle: 5, Waiting: 0, Total: 8
+2026-03-18 06:02:17.601 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 37ms userId=null ip=10.0.7.92
+2026-03-18 06:02:18.330 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 25ms userId=12003 ip=10.0.7.92
+2026-03-18 06:02:20.118 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 21ms userId=12003 ip=10.0.7.92
+2026-03-18 06:02:21.445 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 201ms userId=12003 ip=10.0.7.92
+2026-03-18 06:02:21.450 [http-nio-8443-exec-10] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0011 created successfully for userId=12003, total=$38.90
+2026-03-18 06:02:21.460 [http-nio-8443-exec-10] WARN  com.valentino.orders.InventoryReservationService - Slow inventory reservation for orderId=ORD-20260318-0011: 119ms (threshold: 100ms)
+2026-03-18 06:02:21.600 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0011
+2026-03-18 06:02:24.110 [kafka-consumer-1] INFO  com.valentino.messaging.InventoryConsumer - Received inventory update: productId=558, qty=12
+2026-03-18 06:02:24.115 [kafka-consumer-1] WARN  com.valentino.messaging.InventoryConsumer - Low stock alert: productId=558, remaining=12
+2026-03-18 06:02:25.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:02:25.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 4, Idle: 5, Waiting: 0, Total: 9
+2026-03-18 06:02:28.332 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 40ms userId=null ip=10.0.4.15
+2026-03-18 06:02:29.118 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - GET /api/v2/products/558 200 16ms userId=7321 ip=10.0.4.15
+2026-03-18 06:02:31.667 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 24ms userId=7321 ip=10.0.4.15
+2026-03-18 06:02:32.440 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 204ms userId=7321 ip=10.0.4.15
+2026-03-18 06:02:32.445 [http-nio-8443-exec-4] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0012 created successfully for userId=7321, total=$17.50
+2026-03-18 06:02:32.600 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0012
+2026-03-18 06:02:35.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 4, Idle: 5, Waiting: 0, Total: 9
+2026-03-18 06:02:37.220 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 38ms userId=null ip=10.0.11.44
+2026-03-18 06:02:38.331 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 29ms userId=3307 ip=10.0.11.44
+2026-03-18 06:02:40.118 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 20ms userId=3307 ip=10.0.11.44
+2026-03-18 06:02:41.555 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 193ms userId=3307 ip=10.0.11.44
+2026-03-18 06:02:41.560 [http-nio-8443-exec-8] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0013 created successfully for userId=3307, total=$27.80
+2026-03-18 06:02:41.700 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0013
+2026-03-18 06:02:43.119 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders/ORD-20260318-0013/cancel 200 68ms userId=3307 ip=10.0.11.44
+2026-03-18 06:02:43.120 [http-nio-8443-exec-9] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0013 cancelled by userId=3307
+2026-03-18 06:02:43.190 [http-nio-8443-exec-9] INFO  com.valentino.orders.RefundService - Refund processed successfully for ORD-20260318-0013, amount=$27.80
+2026-03-18 06:02:43.300 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.cancelled event for ORD-20260318-0013
+2026-03-18 06:02:45.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:02:45.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 5, Idle: 5, Waiting: 0, Total: 10
+2026-03-18 06:02:48.551 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 41ms userId=null ip=10.0.2.61
+2026-03-18 06:02:49.667 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - GET /api/v2/products?sort=price_asc 200 35ms userId=5590 ip=10.0.2.61
+2026-03-18 06:02:51.119 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 22ms userId=5590 ip=10.0.2.61
+2026-03-18 06:02:52.778 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 210ms userId=5590 ip=10.0.2.61
+2026-03-18 06:02:52.783 [http-nio-8443-exec-3] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0014 created successfully for userId=5590, total=$73.40
+2026-03-18 06:02:52.900 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0014
+2026-03-18 06:02:55.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 5, Idle: 5, Waiting: 0, Total: 10
+2026-03-18 06:02:57.441 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 36ms userId=null ip=10.0.8.33
+2026-03-18 06:02:58.119 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 28ms userId=9104 ip=10.0.8.33
+2026-03-18 06:03:00.334 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 21ms userId=9104 ip=10.0.8.33
+2026-03-18 06:03:01.778 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 195ms userId=9104 ip=10.0.8.33
+2026-03-18 06:03:01.783 [http-nio-8443-exec-7] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0015 created successfully for userId=9104, total=$45.00
+2026-03-18 06:03:01.900 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0015
+2026-03-18 06:03:04.221 [kafka-consumer-1] INFO  com.valentino.messaging.InventoryConsumer - Received inventory update: productId=992, qty=541
+2026-03-18 06:03:05.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:03:05.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 6, Idle: 5, Waiting: 0, Total: 11
+2026-03-18 06:03:08.119 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 44ms userId=null ip=10.0.12.71
+2026-03-18 06:03:09.556 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - GET /api/v2/products?category=magic 200 30ms userId=18220 ip=10.0.12.71
+2026-03-18 06:03:11.331 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 23ms userId=18220 ip=10.0.12.71
+2026-03-18 06:03:12.001 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 19ms userId=18220 ip=10.0.12.71
+2026-03-18 06:03:13.445 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 215ms userId=18220 ip=10.0.12.71
+2026-03-18 06:03:13.450 [http-nio-8443-exec-2] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0016 created successfully for userId=18220, total=$91.20
+2026-03-18 06:03:13.460 [http-nio-8443-exec-2] WARN  com.valentino.orders.InventoryReservationService - Slow inventory reservation for orderId=ORD-20260318-0016: 155ms (threshold: 100ms)
+2026-03-18 06:03:13.601 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0016
+2026-03-18 06:03:15.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 6, Idle: 5, Waiting: 0, Total: 11
+2026-03-18 06:03:18.220 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 38ms userId=null ip=10.0.9.12
+2026-03-18 06:03:19.110 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 27ms userId=15502 ip=10.0.9.12
+2026-03-18 06:03:20.891 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders/ORD-20260318-0007/cancel 200 71ms userId=15502 ip=10.0.9.12
+2026-03-18 06:03:20.892 [http-nio-8443-exec-5] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0007 cancelled by userId=15502
+2026-03-18 06:03:20.962 [http-nio-8443-exec-5] ERROR com.valentino.orders.RefundService - Failed to process refund for ORD-20260318-0007: payment gateway timeout after 5000ms
+2026-03-18 06:03:20.963 [http-nio-8443-exec-5] INFO  com.valentino.orders.RefundService - Refund for ORD-20260318-0007 queued for retry (attempt 1/3)
+2026-03-18 06:03:21.100 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.cancelled event for ORD-20260318-0007
+2026-03-18 06:03:23.445 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - GET /api/v2/products/992 200 13ms userId=15502 ip=10.0.9.12
+2026-03-18 06:03:25.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:03:25.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 7, Idle: 5, Waiting: 0, Total: 12
+2026-03-18 06:03:28.112 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 40ms userId=null ip=10.0.3.44
+2026-03-18 06:03:29.331 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - GET /api/v2/users/8821/orders 200 48ms userId=8821 ip=10.0.3.44
+2026-03-18 06:03:30.556 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - GET /api/v2/orders/ORD-20260318-0009 200 29ms userId=8821 ip=10.0.3.44
+2026-03-18 06:03:32.001 [scheduler-2] INFO  com.valentino.orders.RefundRetryJob - Retrying refund for ORD-20260318-0007 (attempt 2/3)
+2026-03-18 06:03:32.340 [scheduler-2] INFO  com.valentino.orders.RefundService - Refund processed successfully for ORD-20260318-0007, amount=$22.00
+2026-03-18 06:03:35.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 7, Idle: 5, Waiting: 0, Total: 12
+2026-03-18 06:03:37.891 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 41ms userId=null ip=10.0.5.18
+2026-03-18 06:03:38.770 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 30ms userId=4417 ip=10.0.5.18
+2026-03-18 06:03:40.441 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 22ms userId=4417 ip=10.0.5.18
+2026-03-18 06:03:41.667 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 21ms userId=4417 ip=10.0.5.18
+2026-03-18 06:03:43.110 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 208ms userId=4417 ip=10.0.5.18
+2026-03-18 06:03:43.115 [http-nio-8443-exec-4] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0017 created successfully for userId=4417, total=$56.75
+2026-03-18 06:03:43.300 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0017
+2026-03-18 06:03:45.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:03:45.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 8, Idle: 5, Waiting: 0, Total: 13
+2026-03-18 06:03:48.223 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 39ms userId=null ip=10.0.13.28
+2026-03-18 06:03:49.441 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - GET /api/v2/products?category=beans 200 31ms userId=22440 ip=10.0.13.28
+2026-03-18 06:03:51.112 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 20ms userId=22440 ip=10.0.13.28
+2026-03-18 06:03:52.558 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 199ms userId=22440 ip=10.0.13.28
+2026-03-18 06:03:52.563 [http-nio-8443-exec-8] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0018 created successfully for userId=22440, total=$31.00
+2026-03-18 06:03:52.700 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0018
+2026-03-18 06:03:55.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 8, Idle: 5, Waiting: 0, Total: 13
+2026-03-18 06:03:57.891 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 43ms userId=null ip=10.0.7.92
+2026-03-18 06:03:58.770 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 26ms userId=12003 ip=10.0.7.92
+2026-03-18 06:04:00.445 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 23ms userId=12003 ip=10.0.7.92
+2026-03-18 06:04:01.556 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 214ms userId=12003 ip=10.0.7.92
+2026-03-18 06:04:01.561 [http-nio-8443-exec-2] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0019 created successfully for userId=12003, total=$48.15
+2026-03-18 06:04:01.700 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0019
+2026-03-18 06:04:04.112 [kafka-consumer-1] INFO  com.valentino.messaging.InventoryConsumer - Received inventory update: productId=1102, qty=305
+2026-03-18 06:04:05.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:04:05.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 9, Idle: 5, Waiting: 0, Total: 14
+2026-03-18 06:04:08.331 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 40ms userId=null ip=10.0.14.55
+2026-03-18 06:04:09.209 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 28ms userId=25001 ip=10.0.14.55
+2026-03-18 06:04:11.001 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 21ms userId=25001 ip=10.0.14.55
+2026-03-18 06:04:12.445 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 205ms userId=25001 ip=10.0.14.55
+2026-03-18 06:04:12.450 [http-nio-8443-exec-6] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0020 created successfully for userId=25001, total=$66.90
+2026-03-18 06:04:12.460 [http-nio-8443-exec-6] WARN  com.valentino.orders.InventoryReservationService - Slow inventory reservation for orderId=ORD-20260318-0020: 141ms (threshold: 100ms)
+2026-03-18 06:04:12.601 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0020
+2026-03-18 06:04:15.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 9, Idle: 5, Waiting: 0, Total: 14
+2026-03-18 06:04:17.220 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 37ms userId=null ip=10.0.4.15
+2026-03-18 06:04:18.112 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - GET /api/v2/products/774 200 14ms userId=7321 ip=10.0.4.15
+2026-03-18 06:04:20.556 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 20ms userId=7321 ip=10.0.4.15
+2026-03-18 06:04:21.891 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 198ms userId=7321 ip=10.0.4.15
+2026-03-18 06:04:21.896 [http-nio-8443-exec-10] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0021 created successfully for userId=7321, total=$24.50
+2026-03-18 06:04:22.001 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0021
+2026-03-18 06:04:24.331 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders/ORD-20260318-0021/cancel 200 75ms userId=7321 ip=10.0.4.15
+2026-03-18 06:04:24.332 [http-nio-8443-exec-1] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0021 cancelled by userId=7321
+2026-03-18 06:04:24.405 [http-nio-8443-exec-1] ERROR com.valentino.orders.RefundService - Failed to process refund for ORD-20260318-0021: payment gateway timeout after 5000ms
+2026-03-18 06:04:24.406 [http-nio-8443-exec-1] INFO  com.valentino.orders.RefundService - Refund for ORD-20260318-0021 queued for retry (attempt 1/3)
+2026-03-18 06:04:24.500 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.cancelled event for ORD-20260318-0021
+2026-03-18 06:04:25.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:04:25.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 10, Idle: 5, Waiting: 0, Total: 15
+2026-03-18 06:04:28.110 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 42ms userId=null ip=10.0.2.61
+2026-03-18 06:04:29.441 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 30ms userId=5590 ip=10.0.2.61
+2026-03-18 06:04:31.223 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 22ms userId=5590 ip=10.0.2.61
+2026-03-18 06:04:32.667 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 207ms userId=5590 ip=10.0.2.61
+2026-03-18 06:04:32.672 [http-nio-8443-exec-5] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0022 created successfully for userId=5590, total=$39.95
+2026-03-18 06:04:32.800 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0022
+2026-03-18 06:04:35.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 10, Idle: 5, Waiting: 0, Total: 15
+2026-03-18 06:04:36.001 [scheduler-2] INFO  com.valentino.orders.RefundRetryJob - Retrying refund for ORD-20260318-0021 (attempt 2/3)
+2026-03-18 06:04:36.401 [scheduler-2] ERROR com.valentino.orders.RefundService - Failed to process refund for ORD-20260318-0021: payment gateway timeout after 5000ms
+2026-03-18 06:04:36.402 [scheduler-2] INFO  com.valentino.orders.RefundService - Refund for ORD-20260318-0021 queued for retry (attempt 2/3)
+2026-03-18 06:04:38.891 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 39ms userId=null ip=10.0.8.33
+2026-03-18 06:04:39.778 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 27ms userId=9104 ip=10.0.8.33
+2026-03-18 06:04:41.556 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 21ms userId=9104 ip=10.0.8.33
+2026-03-18 06:04:42.223 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 23ms userId=9104 ip=10.0.8.33
+2026-03-18 06:04:43.445 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 202ms userId=9104 ip=10.0.8.33
+2026-03-18 06:04:43.450 [http-nio-8443-exec-10] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0023 created successfully for userId=9104, total=$52.60
+2026-03-18 06:04:43.600 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0023
+2026-03-18 06:04:45.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:04:45.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 11, Idle: 5, Waiting: 0, Total: 16
+2026-03-18 06:04:48.001 [scheduler-2] INFO  com.valentino.orders.RefundRetryJob - Retrying refund for ORD-20260318-0021 (attempt 3/3)
+2026-03-18 06:04:48.412 [scheduler-2] ERROR com.valentino.orders.RefundService - Failed to process refund for ORD-20260318-0021: payment gateway timeout after 5000ms
+2026-03-18 06:04:48.413 [scheduler-2] ERROR com.valentino.orders.RefundService - Refund permanently failed for ORD-20260318-0021 after 3 attempts. Manual intervention required.
+2026-03-18 06:04:48.415 [scheduler-2] WARN  com.valentino.notifications.AlertService - Alert dispatched: REFUND_FAILURE for ORD-20260318-0021
+2026-03-18 06:04:51.110 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 43ms userId=null ip=10.0.10.5
+2026-03-18 06:04:52.331 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 28ms userId=20100 ip=10.0.10.5
+2026-03-18 06:04:54.112 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 20ms userId=20100 ip=10.0.10.5
+2026-03-18 06:04:55.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 11, Idle: 5, Waiting: 0, Total: 16
+2026-03-18 06:04:57.445 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 211ms userId=20100 ip=10.0.10.5
+2026-03-18 06:04:57.450 [http-nio-8443-exec-4] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0024 created successfully for userId=20100, total=$37.80
+2026-03-18 06:04:57.601 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0024
+2026-03-18 06:04:59.331 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 38ms userId=null ip=10.0.11.44
+2026-03-18 06:05:00.112 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 29ms userId=3307 ip=10.0.11.44
+2026-03-18 06:05:02.445 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 22ms userId=3307 ip=10.0.11.44
+2026-03-18 06:05:03.891 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 196ms userId=3307 ip=10.0.11.44
+2026-03-18 06:05:03.896 [http-nio-8443-exec-8] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0025 created successfully for userId=3307, total=$28.40
+2026-03-18 06:05:04.001 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0025
+2026-03-18 06:05:05.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:05:05.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 12, Idle: 5, Waiting: 0, Total: 17
+2026-03-18 06:05:08.220 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 41ms userId=null ip=10.0.3.44
+2026-03-18 06:05:09.445 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - GET /api/v2/products?search=valentino 200 34ms userId=8821 ip=10.0.3.44
+2026-03-18 06:05:11.110 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 19ms userId=8821 ip=10.0.3.44
+2026-03-18 06:05:12.556 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 219ms userId=8821 ip=10.0.3.44
+2026-03-18 06:05:12.561 [http-nio-8443-exec-2] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0026 created successfully for userId=8821, total=$84.00
+2026-03-18 06:05:12.571 [http-nio-8443-exec-2] WARN  com.valentino.orders.InventoryReservationService - Slow inventory reservation for orderId=ORD-20260318-0026: 163ms (threshold: 100ms)
+2026-03-18 06:05:12.700 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0026
+2026-03-18 06:05:15.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 12, Idle: 5, Waiting: 0, Total: 17
+2026-03-18 06:05:17.331 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 37ms userId=null ip=10.0.12.71
+2026-03-18 06:05:18.223 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 26ms userId=18220 ip=10.0.12.71
+2026-03-18 06:05:19.891 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 23ms userId=18220 ip=10.0.12.71
+2026-03-18 06:05:20.556 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 21ms userId=18220 ip=10.0.12.71
+2026-03-18 06:05:22.112 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 203ms userId=18220 ip=10.0.12.71
+2026-03-18 06:05:22.117 [http-nio-8443-exec-7] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0027 created successfully for userId=18220, total=$71.35
+2026-03-18 06:05:22.300 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0027
+2026-03-18 06:05:24.441 [kafka-consumer-1] INFO  com.valentino.messaging.InventoryConsumer - Received inventory update: productId=331, qty=63
+2026-03-18 06:05:25.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:05:25.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 13, Idle: 5, Waiting: 0, Total: 18
+2026-03-18 06:05:27.112 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 44ms userId=null ip=10.0.14.55
+2026-03-18 06:05:28.445 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 31ms userId=25001 ip=10.0.14.55
+2026-03-18 06:05:30.223 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 20ms userId=25001 ip=10.0.14.55
+2026-03-18 06:05:31.667 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 201ms userId=25001 ip=10.0.14.55
+2026-03-18 06:05:31.672 [http-nio-8443-exec-1] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0028 created successfully for userId=25001, total=$43.20
+2026-03-18 06:05:31.800 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0028
+2026-03-18 06:05:34.118 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 38ms userId=null ip=10.0.9.12
+2026-03-18 06:05:35.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 14, Idle: 5, Waiting: 0, Total: 19
+2026-03-18 06:05:35.010 [scheduler-1] WARN  com.valentino.db.ConnectionPoolManager - Connection pool utilization high: 14/20 active connections (70%)
+2026-03-18 06:05:36.001 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 29ms userId=15502 ip=10.0.9.12
+2026-03-18 06:05:37.445 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 22ms userId=15502 ip=10.0.9.12
+2026-03-18 06:05:38.891 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 213ms userId=15502 ip=10.0.9.12
+2026-03-18 06:05:38.896 [http-nio-8443-exec-5] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0029 created successfully for userId=15502, total=$58.10
+2026-03-18 06:05:39.001 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0029
+2026-03-18 06:05:41.220 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 40ms userId=null ip=10.0.5.18
+2026-03-18 06:05:42.112 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - GET /api/v2/products?category=seeds 200 28ms userId=4417 ip=10.0.5.18
+2026-03-18 06:05:43.556 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 21ms userId=4417 ip=10.0.5.18
+2026-03-18 06:05:44.891 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 207ms userId=4417 ip=10.0.5.18
+2026-03-18 06:05:44.896 [http-nio-8443-exec-9] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0030 created successfully for userId=4417, total=$35.50
+2026-03-18 06:05:45.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:05:45.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 15, Idle: 5, Waiting: 0, Total: 20
+2026-03-18 06:05:45.007 [scheduler-1] WARN  com.valentino.db.ConnectionPoolManager - Connection pool utilization high: 15/20 active connections (75%)
+2026-03-18 06:05:45.100 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0030
+2026-03-18 06:05:48.331 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 41ms userId=null ip=10.0.7.92
+2026-03-18 06:05:49.223 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 30ms userId=12003 ip=10.0.7.92
+2026-03-18 06:05:51.001 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 22ms userId=12003 ip=10.0.7.92
+2026-03-18 06:05:52.445 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 216ms userId=12003 ip=10.0.7.92
+2026-03-18 06:05:52.450 [http-nio-8443-exec-3] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0031 created successfully for userId=12003, total=$44.75
+2026-03-18 06:05:52.460 [http-nio-8443-exec-3] WARN  com.valentino.orders.InventoryReservationService - Slow inventory reservation for orderId=ORD-20260318-0031: 172ms (threshold: 100ms)
+2026-03-18 06:05:52.601 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0031
+2026-03-18 06:05:55.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 16, Idle: 4, Waiting: 0, Total: 20
+2026-03-18 06:05:55.008 [scheduler-1] WARN  com.valentino.db.ConnectionPoolManager - Connection pool utilization high: 16/20 active connections (80%)
+2026-03-18 06:05:57.220 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 39ms userId=null ip=10.0.13.28
+2026-03-18 06:05:58.112 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 27ms userId=22440 ip=10.0.13.28
+2026-03-18 06:05:59.556 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 20ms userId=22440 ip=10.0.13.28
+2026-03-18 06:06:01.001 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 224ms userId=22440 ip=10.0.13.28
+2026-03-18 06:06:01.006 [http-nio-8443-exec-7] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0032 created successfully for userId=22440, total=$63.40
+2026-03-18 06:06:01.200 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0032
+2026-03-18 06:06:03.891 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 43ms userId=null ip=10.0.4.15
+2026-03-18 06:06:04.778 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 32ms userId=7321 ip=10.0.4.15
+2026-03-18 06:06:05.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:06:05.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 17, Idle: 3, Waiting: 0, Total: 20
+2026-03-18 06:06:05.008 [scheduler-1] WARN  com.valentino.db.ConnectionPoolManager - Connection pool utilization critical: 17/20 active connections (85%)
+2026-03-18 06:06:08.110 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 23ms userId=7321 ip=10.0.4.15
+2026-03-18 06:06:09.445 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 231ms userId=7321 ip=10.0.4.15
+2026-03-18 06:06:09.450 [http-nio-8443-exec-1] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0033 created successfully for userId=7321, total=$19.99
+2026-03-18 06:06:09.600 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0033
+2026-03-18 06:06:12.220 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 40ms userId=null ip=10.0.2.61
+2026-03-18 06:06:13.556 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 29ms userId=5590 ip=10.0.2.61
+2026-03-18 06:06:15.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 18, Idle: 2, Waiting: 0, Total: 20
+2026-03-18 06:06:15.008 [scheduler-1] WARN  com.valentino.db.ConnectionPoolManager - Connection pool utilization critical: 18/20 active connections (90%)
+2026-03-18 06:06:17.001 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 24ms userId=5590 ip=10.0.2.61
+2026-03-18 06:06:18.445 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 238ms userId=5590 ip=10.0.2.61
+2026-03-18 06:06:18.450 [http-nio-8443-exec-5] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0034 created successfully for userId=5590, total=$76.80
+2026-03-18 06:06:18.601 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0034
+2026-03-18 06:06:21.331 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 42ms userId=null ip=10.0.8.33
+2026-03-18 06:06:22.112 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 31ms userId=9104 ip=10.0.8.33
+2026-03-18 06:06:24.001 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 22ms userId=9104 ip=10.0.8.33
+2026-03-18 06:06:25.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:06:25.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 19, Idle: 1, Waiting: 0, Total: 20
+2026-03-18 06:06:25.008 [scheduler-1] ERROR com.valentino.db.ConnectionPoolManager - Connection pool near exhaustion: 19/20 active connections (95%). Potential connection leak detected.
+2026-03-18 06:06:27.445 [http-nio-8443-exec-9] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 247ms userId=9104 ip=10.0.8.33
+2026-03-18 06:06:27.450 [http-nio-8443-exec-9] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0035 created successfully for userId=9104, total=$51.25
+2026-03-18 06:06:27.460 [http-nio-8443-exec-9] WARN  com.valentino.orders.InventoryReservationService - Slow inventory reservation for orderId=ORD-20260318-0035: 189ms (threshold: 100ms)
+2026-03-18 06:06:27.601 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0035
+2026-03-18 06:06:30.112 [http-nio-8443-exec-10] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 44ms userId=null ip=10.0.10.5
+2026-03-18 06:06:31.445 [http-nio-8443-exec-1] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 33ms userId=20100 ip=10.0.10.5
+2026-03-18 06:06:33.220 [http-nio-8443-exec-2] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 21ms userId=20100 ip=10.0.10.5
+2026-03-18 06:06:35.003 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 20, Idle: 0, Waiting: 0, Total: 20
+2026-03-18 06:06:35.005 [scheduler-1] ERROR com.valentino.db.ConnectionPoolManager - Connection pool EXHAUSTED: 20/20 active connections. All new requests will block until a connection is returned.
+2026-03-18 06:06:36.891 [http-nio-8443-exec-3] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 201 1847ms userId=20100 ip=10.0.10.5
+2026-03-18 06:06:36.896 [http-nio-8443-exec-3] INFO  com.valentino.orders.OrderService - Order ORD-20260318-0036 created successfully for userId=20100, total=$42.90
+2026-03-18 06:06:36.897 [http-nio-8443-exec-3] WARN  com.valentino.web.RequestLogger - Slow request detected: POST /api/v2/orders took 1847ms (threshold: 500ms)
+2026-03-18 06:06:37.001 [kafka-producer-1] INFO  com.valentino.messaging.OrderEventPublisher - Published order.created event for ORD-20260318-0036
+2026-03-18 06:06:39.445 [http-nio-8443-exec-4] INFO  com.valentino.web.RequestLogger - POST /api/v2/auth/login 200 2041ms userId=null ip=10.0.14.55
+2026-03-18 06:06:39.446 [http-nio-8443-exec-4] WARN  com.valentino.web.RequestLogger - Slow request detected: POST /api/v2/auth/login took 2041ms (threshold: 500ms)
+2026-03-18 06:06:41.112 [http-nio-8443-exec-5] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 200 1532ms userId=25001 ip=10.0.14.55
+2026-03-18 06:06:41.113 [http-nio-8443-exec-5] WARN  com.valentino.web.RequestLogger - Slow request detected: GET /api/v2/products took 1532ms (threshold: 500ms)
+2026-03-18 06:06:43.556 [http-nio-8443-exec-6] INFO  com.valentino.web.RequestLogger - POST /api/v2/cart/add 200 2103ms userId=25001 ip=10.0.14.55
+2026-03-18 06:06:43.557 [http-nio-8443-exec-6] WARN  com.valentino.web.RequestLogger - Slow request detected: POST /api/v2/cart/add took 2103ms (threshold: 500ms)
+2026-03-18 06:06:45.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=UP, db=UP, redis=UP, kafka=UP
+2026-03-18 06:06:45.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 20, Idle: 0, Waiting: 3, Total: 20
+2026-03-18 06:06:45.008 [scheduler-1] ERROR com.valentino.db.ConnectionPoolManager - Connection pool EXHAUSTED with waiting threads: Active=20, Waiting=3. Probable connection leak in application code.
+2026-03-18 06:06:48.001 [http-nio-8443-exec-7] ERROR com.valentino.web.ExceptionHandler - Request failed: POST /api/v2/orders
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30000ms (total=20, active=20, idle=0, waiting=4)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:146)
+	at com.valentino.orders.OrderRepository.createOrder(OrderRepository.java:47)
+	at com.valentino.orders.OrderService.placeOrder(OrderService.java:112)
+	at com.valentino.web.OrderController.createOrder(OrderController.java:58)
+2026-03-18 06:06:48.003 [http-nio-8443-exec-7] INFO  com.valentino.web.RequestLogger - POST /api/v2/orders 503 30241ms userId=25001 ip=10.0.14.55
+2026-03-18 06:06:51.445 [http-nio-8443-exec-8] ERROR com.valentino.web.ExceptionHandler - Request failed: GET /api/v2/products
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30000ms (total=20, active=20, idle=0, waiting=6)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.valentino.products.ProductRepository.findAll(ProductRepository.java:33)
+	at com.valentino.products.ProductService.getAllProducts(ProductService.java:28)
+	at com.valentino.web.ProductController.listProducts(ProductController.java:41)
+2026-03-18 06:06:51.447 [http-nio-8443-exec-8] INFO  com.valentino.web.RequestLogger - GET /api/v2/products 503 30188ms userId=12003 ip=10.0.7.92
+2026-03-18 06:06:55.003 [scheduler-1] INFO  com.valentino.health.HealthCheckService - Health check: status=DEGRADED, db=DEGRADED(slow), redis=UP, kafka=UP
+2026-03-18 06:06:55.005 [scheduler-1] DEBUG com.valentino.db.ConnectionPoolManager - Pool stats - Active: 20, Idle: 0, Waiting: 6, Total: 20
+2026-03-18 06:06:55.008 [scheduler-1] ERROR com.valentino.db.ConnectionPoolManager - CRITICAL: Connection pool fully exhausted with 6 waiting threads. Application performance severely degraded. Immediate investigation required.
+2026-03-18 06:06:55.010 [scheduler-1] WARN  com.valentino.notifications.AlertService - Alert dispatched: DB_POOL_EXHAUSTION severity=CRITICAL

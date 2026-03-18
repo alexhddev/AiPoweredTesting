@@ -1,0 +1,91 @@
+
+<div style="font-family: var(--font-sans); max-width: 780px; margin: 0 auto; padding: 1rem 0;">
+
+  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+    <span style="font-size: 13px; color: var(--color-text-secondary);">Projects</span>
+    <span style="color: var(--color-text-secondary); font-size: 13px;">/</span>
+    <span style="font-size: 13px; color: var(--color-text-secondary);">Backend Team</span>
+    <span style="color: var(--color-text-secondary); font-size: 13px;">/</span>
+    <span style="font-size: 13px; color: var(--color-text-primary); font-weight: 500;">BE-4821</span>
+  </div>
+
+  <div style="background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.5rem;">
+
+    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 1.25rem;">
+      <div style="flex: 1; min-width: 220px;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+          <span style="background: #E6F1FB; color: #0C447C; font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 4px;">Story</span>
+          <span style="background: var(--color-background-success); color: var(--color-text-success); font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 4px;">In Progress</span>
+        </div>
+        <h2 style="font-size: 18px; font-weight: 500; margin: 0; color: var(--color-text-primary); line-height: 1.4;">Add OAuth2 login with Google and GitHub</h2>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 260px; gap: 2rem; align-items: start;">
+
+      <div>
+        <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 6px;">Description</p>
+        <p style="font-size: 14px; color: var(--color-text-primary); line-height: 1.7; margin: 0 0 1.25rem;">Implement OAuth2 social login using Google and GitHub providers. Users should be able to sign in without creating a password. On first login, a new user account should be created and linked to the OAuth identity.</p>
+
+        <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 8px;">Acceptance criteria</p>
+        <div style="font-size: 14px; color: var(--color-text-primary); line-height: 1.8;">
+          <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 4px;"><span style="color: var(--color-text-success); margin-top: 2px; font-size: 16px;">✓</span><span>User can click "Sign in with Google" and be redirected to Google auth</span></div>
+          <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 4px;"><span style="color: var(--color-text-success); margin-top: 2px; font-size: 16px;">✓</span><span>User can click "Sign in with GitHub" and be redirected to GitHub auth</span></div>
+          <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 4px;"><span style="color: var(--color-text-secondary); margin-top: 2px; font-size: 16px;">○</span><span>On first login, a new account is auto-created with email from provider</span></div>
+          <div style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: var(--color-text-secondary); margin-top: 2px; font-size: 16px;">○</span><span>Existing accounts with same email are linked automatically</span></div>
+        </div>
+
+        <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 1.25rem 0 8px;">Comments</p>
+        <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px; margin-bottom: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <div style="width: 26px; height: 26px; border-radius: 50%; background: #CECBF6; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: #3C3489;">SR</div>
+            <span style="font-size: 13px; font-weight: 500; color: var(--color-text-primary);">Sara R.</span>
+            <span style="font-size: 12px; color: var(--color-text-secondary);">2 hours ago</span>
+          </div>
+          <p style="font-size: 13px; color: var(--color-text-primary); margin: 0; padding-left: 34px;">Google flow is working in staging. GitHub redirect URL still needs updating in the OAuth app settings.</p>
+        </div>
+      </div>
+
+      <div style="border-left: 0.5px solid var(--color-border-tertiary); padding-left: 1.5rem;">
+        <div style="margin-bottom: 14px;">
+          <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px;">Assignee</p>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 26px; height: 26px; border-radius: 50%; background: #9FE1CB; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: #085041;">JK</div>
+            <span style="font-size: 13px; color: var(--color-text-primary);">James K.</span>
+          </div>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px;">Reporter</p>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 26px; height: 26px; border-radius: 50%; background: #F5C4B3; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: #712B13;">ML</div>
+            <span style="font-size: 13px; color: var(--color-text-primary);">Maria L.</span>
+          </div>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px;">Priority</p>
+          <span style="background: #FAEEDA; color: #633806; font-size: 12px; font-weight: 500; padding: 3px 8px; border-radius: 4px;">Medium</span>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px;">Sprint</p>
+          <span style="font-size: 13px; color: var(--color-text-primary);">Sprint 24 — Mar 10–21</span>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px;">Story points</p>
+          <span style="font-size: 13px; color: var(--color-text-primary);">5</span>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px;">Labels</p>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="background: var(--color-background-secondary); border: 0.5px solid var(--color-border-secondary); color: var(--color-text-primary); font-size: 12px; padding: 2px 8px; border-radius: 4px;">auth</span>
+            <span style="background: var(--color-background-secondary); border: 0.5px solid var(--color-border-secondary); color: var(--color-text-primary); font-size: 12px; padding: 2px 8px; border-radius: 4px;">backend</span>
+          </div>
+        </div>
+        <div>
+          <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px;">Linked issues</p>
+          <div style="font-size: 13px; color: #185FA5;">BE-4799</div>
+          <div style="font-size: 13px; color: #185FA5;">BE-4803</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
