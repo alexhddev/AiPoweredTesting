@@ -1,0 +1,263 @@
+# Awesome Pizza API Test Requests
+# Base URL: http://localhost:3000
+# Use the REST Client extension in VS Code to execute these requests
+
+### Variables
+@baseUrl = http://localhost:3000
+@contentType = application/json
+
+###############################################
+# DAILY MENU ENDPOINTS
+###############################################
+
+### Get Daily Menu
+# Returns the list of available pizzas for today
+GET {{baseUrl}}/api/daily-menu
+Accept: {{contentType}}
+
+###############################################
+# ORDER ENDPOINTS
+###############################################
+
+### Get Order by ID (Existing Order)
+# Retrieves an existing order by its ID
+GET {{baseUrl}}/api/orders/order-001
+Accept: {{contentType}}
+
+### Get Order by ID (Non-existent Order)
+# Test case for order that doesn't exist
+GET {{baseUrl}}/api/orders/nonexistent-order
+Accept: {{contentType}}
+
+### Create New Order
+# Creates a new pizza order with customer sender and items
+POST {{baseUrl}}/api/orders
+Content-Type: {{contentType}}
+
+{
+    "sender": "Alice Johnson",
+    "contents": [
+        {
+            "name": "Margherita Pizza",
+            "quantity": 2
+        },
+        {
+            "name": "BBQ Chicken Pizza",
+            "quantity": 1
+        }
+    ]
+}
+
+### Create Order with Invalid Data (Missing Sender)
+# Test case for validation - missing customer sender
+POST {{baseUrl}}/api/orders
+Content-Type: {{contentType}}
+
+{
+    "contents": [
+        {
+            "name": "Pepperoni Pizza",
+            "quantity": 1
+        }
+    ]
+}
+
+### Create Order with Invalid Data (Empty Contents)
+# Test case for validation - empty contents array
+POST {{baseUrl}}/api/orders
+Content-Type: {{contentType}}
+
+{
+    "sender": "Bob Wilson",
+    "contents": []
+}
+
+### Create Order with Invalid Item Quantity
+# Test case for validation - invalid quantity
+POST {{baseUrl}}/api/orders
+Content-Type: {{contentType}}
+
+{
+    "sender": "Carol Brown",
+    "contents": [
+        {
+            "name": "Quattro Stagioni",
+            "quantity": -1
+        }
+    ]
+}
+
+### Update Order (Full Update)
+# Updates an existing order with new sender, status, and contents
+PUT {{baseUrl}}/api/orders/order-001
+Content-Type: {{contentType}}
+
+{
+    "sender": "John Doe Updated",
+    "status": "DELIVERING",
+    "contents": [
+        {
+            "name": "Margherita Pizza",
+            "quantity": 3
+        },
+        {
+            "name": "Vegetarian Delight",
+            "quantity": 1
+        }
+    ]
+}
+
+### Update Order (Status Only)
+# Updates only the status of an existing order
+PUT {{baseUrl}}/api/orders/order-002
+Content-Type: {{contentType}}
+
+{
+    "status": "DELIVERED"
+}
+
+### Update Order (Sender Only)
+# Updates only the customer sender of an existing order
+PUT {{baseUrl}}/api/orders/order-001
+Content-Type: {{contentType}}
+
+{
+    "sender": "John Smith"
+}
+
+### Update Order (Contents Only)
+# Updates only the contents of an existing order
+PUT {{baseUrl}}/api/orders/order-002
+Content-Type: {{contentType}}
+
+{
+    "contents": [
+        {
+            "name": "Pepperoni Pizza",
+            "quantity": 2
+        }
+    ]
+}
+
+### Update Order with Invalid Status
+# Test case for validation - invalid status value
+PUT {{baseUrl}}/api/orders/order-001
+Content-Type: {{contentType}}
+
+{
+    "status": "INVALID_STATUS"
+}
+
+### Update Non-existent Order
+# Test case for updating an order that doesn't exist
+PUT {{baseUrl}}/api/orders/nonexistent-order
+Content-Type: {{contentType}}
+
+{
+    "status": "DELIVERED"
+}
+
+###############################################
+# PROTECTED / ADMIN ENDPOINTS
+###############################################
+
+@adminToken = eyJyb2xlIjoiYWRtaW4ifQ==
+@userToken = eyJyb2xlIjoidXNlciJ9
+
+### Access Protected Route (valid token)
+# Returns 200 - access granted
+GET {{baseUrl}}/api/protected
+Authorization: Bearer {{adminToken}}
+
+### Access Protected Route (no token)
+# Returns 401 - unauthorized
+GET {{baseUrl}}/api/protected
+
+### Access Protected Route (wrong token)
+# Returns 401 - unauthorized
+GET {{baseUrl}}/api/protected
+Authorization: Bearer invalidtoken
+
+### Access Admin Route (admin role)
+# Decodes token, finds role: admin -> returns 200
+GET {{baseUrl}}/api/admin
+Authorization: Bearer {{adminToken}}
+
+### Access Admin Route (non-admin role)
+# Decodes token, role: user -> returns 403 not authorised
+GET {{baseUrl}}/api/admin
+Authorization: Bearer {{userToken}}
+
+### Access Admin Route (no token)
+# Returns 401 - token required
+GET {{baseUrl}}/api/admin
+
+###############################################
+# SAMPLE WORKFLOW
+###############################################
+
+### 1. Check Daily Menu
+GET {{baseUrl}}/api/daily-menu
+
+### 2. Create a New Order
+POST {{baseUrl}}/api/orders
+Content-Type: {{contentType}}
+
+{
+    "sender": "Mike Davis",
+    "contents": [
+        {
+            "name": "Quattro Stagioni",
+            "quantity": 1
+        },
+        {
+            "name": "Margherita Pizza",
+            "quantity": 2
+        }
+    ]
+}
+
+### 3. Get the Created Order (replace with actual order ID from step 2)
+# GET {{baseUrl}}/api/orders/{order-id-from-step-2}
+
+### 4. Update Order Status to Delivering
+# PUT {{baseUrl}}/api/orders/{order-id-from-step-2}
+# Content-Type: {{contentType}}
+# 
+# {
+#     "status": "DELIVERING"
+# }
+
+### 5. Final Status Update to Delivered
+# PUT {{baseUrl}}/api/orders/{order-id-from-step-2}
+# Content-Type: {{contentType}}
+# 
+# {
+#     "status": "DELIVERED"
+# }
+
+###############################################
+# NOTES
+###############################################
+
+# Available Order Statuses:
+# - RECEIVED: Order has been received and is being prepared
+# - DELIVERING: Order is out for delivery
+# - DELIVERED: Order has been successfully delivered
+# - CANCELED: Order has been canceled
+
+# Available Pizza Types (from daily menu):
+# - Margherita Pizza
+# - Pepperoni Pizza
+# - Quattro Stagioni
+# - Vegetarian Delight
+# - BBQ Chicken Pizza
+
+# Response Format:
+# All responses follow this structure:
+# {
+#     "success": boolean,
+#     "data": object (on success),
+#     "error": string (on error),
+#     "message": string
+# }
