@@ -1,0 +1,89 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - heading "🍕 Awesome Pizza" [level=1] [ref=e5]
+        - button "Toggle dark theme" [ref=e6] [cursor=pointer]: 🌙
+      - paragraph [ref=e7]: Delicious pizzas delivered to your door!
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - heading "Today's Menu" [level=2] [ref=e10]
+      - generic [ref=e11]:
+        - generic [ref=e128] [cursor=pointer]:
+          - img "Margherita Pizza" [ref=e129]
+          - heading "Margherita Pizza" [level=3] [ref=e130]
+          - paragraph [ref=e131]: Classic pizza with fresh tomatoes, mozzarella cheese, and basil
+          - generic [ref=e133]:
+            - button "−" [ref=e134]
+            - generic [ref=e135]: "0"
+            - button "+" [ref=e136]
+        - generic [ref=e137] [cursor=pointer]:
+          - img "Pepperoni Pizza" [ref=e138]
+          - heading "Pepperoni Pizza" [level=3] [ref=e139]
+          - paragraph [ref=e140]: Traditional pizza topped with pepperoni and mozzarella cheese
+          - generic [ref=e142]:
+            - button "−" [ref=e143]
+            - generic [ref=e144]: "0"
+            - button "+" [ref=e145]
+        - generic [ref=e146] [cursor=pointer]:
+          - img "Quattro Stagioni" [ref=e147]
+          - heading "Quattro Stagioni" [level=3] [ref=e148]
+          - paragraph [ref=e149]: Four seasons pizza with artichokes, ham, mushrooms, and olives
+          - generic [ref=e151]:
+            - button "−" [ref=e152]
+            - generic [ref=e153]: "0"
+            - button "+" [ref=e154]
+        - generic [ref=e155] [cursor=pointer]:
+          - img "Vegetarian Delight" [ref=e156]
+          - heading "Vegetarian Delight" [level=3] [ref=e157]
+          - paragraph [ref=e158]: Fresh vegetables including bell peppers, onions, mushrooms, and tomatoes
+          - generic [ref=e160]:
+            - button "−" [ref=e161]
+            - generic [ref=e162]: "0"
+            - button "+" [ref=e163]
+        - generic [ref=e164] [cursor=pointer]:
+          - img "BBQ Chicken Pizza" [ref=e165]
+          - heading "BBQ Chicken Pizza" [level=3] [ref=e166]
+          - paragraph [ref=e167]: Grilled chicken with BBQ sauce, red onions, and cilantro
+          - generic [ref=e169]:
+            - button "−" [ref=e170]
+            - generic [ref=e171]: "0"
+            - button "+" [ref=e172]
+    - generic [ref=e57]:
+      - heading "Your Order" [level=2] [ref=e58]
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e61]: "Your Name:"
+          - textbox "Your Name:" [ref=e62]:
+            - /placeholder: Enter your name
+        - generic [ref=e63]:
+          - heading "Cart" [level=3] [ref=e64]
+          - paragraph [ref=e173]: Your cart is empty
+          - strong [ref=e68]: "Total Items: 0"
+        - button "Place Order" [disabled] [ref=e69]
+    - generic [ref=e70]:
+      - heading "Order Management" [level=2] [ref=e71]
+      - generic [ref=e73]:
+        - generic [ref=e74]: "Order ID:"
+        - textbox "Order ID:" [ref=e75]:
+          - /placeholder: Enter order ID
+          - text: order-1784811043624-707
+        - button "Look Up Order" [ref=e76] [cursor=pointer]
+      - generic [ref=e174]:
+        - generic [ref=e195]:
+          - generic [ref=e196]:
+            - generic [ref=e197]: Order ID
+            - generic [ref=e198]: order-1784811043624-707
+          - generic [ref=e199]:
+            - generic [ref=e200]: Customer
+            - generic [ref=e201]: Test User
+          - generic [ref=e202]:
+            - generic [ref=e203]: Status
+            - generic [ref=e204]: DELIVERING
+        - generic [ref=e206]:
+          - heading "Order Items" [level=4] [ref=e207]
+          - generic [ref=e208]:
+            - generic [ref=e209]: Margherita Pizza
+            - strong [ref=e211]: ×1
+        - button "Mark as Delivered" [ref=e213] [cursor=pointer]
+  - generic [ref=e77]: Order status updated to DELIVERING

@@ -1,0 +1,92 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - heading "🍕 Awesome Pizza" [level=1] [ref=e5]
+        - button "Toggle dark theme" [ref=e6] [cursor=pointer]: 🌙
+      - paragraph [ref=e7]: Delicious pizzas delivered to your door!
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - heading "Today's Menu" [level=2] [ref=e10]
+      - generic [ref=e11]:
+        - generic [ref=e231] [cursor=pointer]:
+          - img "Margherita Pizza" [ref=e232]
+          - heading "Margherita Pizza" [level=3] [ref=e233]
+          - paragraph [ref=e234]: Classic pizza with fresh tomatoes, mozzarella cheese, and basil
+          - generic [ref=e236]:
+            - button "−" [ref=e237]
+            - generic [ref=e238]: "1"
+            - button "+" [ref=e239]
+        - generic [ref=e240] [cursor=pointer]:
+          - img "Pepperoni Pizza" [ref=e241]
+          - heading "Pepperoni Pizza" [level=3] [ref=e242]
+          - paragraph [ref=e243]: Traditional pizza topped with pepperoni and mozzarella cheese
+          - generic [ref=e245]:
+            - button "−" [ref=e246]
+            - generic [ref=e247]: "0"
+            - button "+" [ref=e248]
+        - generic [ref=e249] [cursor=pointer]:
+          - img "Quattro Stagioni" [ref=e250]
+          - heading "Quattro Stagioni" [level=3] [ref=e251]
+          - paragraph [ref=e252]: Four seasons pizza with artichokes, ham, mushrooms, and olives
+          - generic [ref=e254]:
+            - button "−" [ref=e255]
+            - generic [ref=e256]: "0"
+            - button "+" [ref=e257]
+        - generic [ref=e258] [cursor=pointer]:
+          - img "Vegetarian Delight" [ref=e259]
+          - heading "Vegetarian Delight" [level=3] [ref=e260]
+          - paragraph [ref=e261]: Fresh vegetables including bell peppers, onions, mushrooms, and tomatoes
+          - generic [ref=e263]:
+            - button "−" [ref=e264]
+            - generic [ref=e265]: "0"
+            - button "+" [ref=e266]
+        - generic [ref=e267] [cursor=pointer]:
+          - img "BBQ Chicken Pizza" [ref=e268]
+          - heading "BBQ Chicken Pizza" [level=3] [ref=e269]
+          - paragraph [ref=e270]: Grilled chicken with BBQ sauce, red onions, and cilantro
+          - generic [ref=e272]:
+            - button "−" [ref=e273]
+            - generic [ref=e274]: "0"
+            - button "+" [ref=e275]
+    - generic [ref=e57]:
+      - heading "Your Order" [level=2] [ref=e58]
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e61]: "Your Name:"
+          - textbox "Your Name:" [ref=e62]:
+            - /placeholder: Enter your name
+        - generic [ref=e63]:
+          - heading "Cart" [level=3] [ref=e64]
+          - generic [ref=e276]:
+            - generic [ref=e277]:
+              - generic [ref=e278]: Margherita Pizza
+              - generic [ref=e279]: "Quantity: 1"
+            - button "Remove" [ref=e280] [cursor=pointer]
+          - strong [ref=e68]: "Total Items: 1"
+        - button "Place Order" [disabled] [ref=e69]
+    - generic [ref=e70]:
+      - heading "Order Management" [level=2] [ref=e71]
+      - generic [ref=e73]:
+        - generic [ref=e74]: "Order ID:"
+        - textbox "Order ID:" [ref=e75]:
+          - /placeholder: Enter order ID
+          - text: order-1784811043624-707
+        - button "Look Up Order" [ref=e76] [cursor=pointer]
+      - generic [ref=e174]:
+        - generic [ref=e214]:
+          - generic [ref=e215]:
+            - generic [ref=e216]: Order ID
+            - generic [ref=e217]: order-1784811043624-707
+          - generic [ref=e218]:
+            - generic [ref=e219]: Customer
+            - generic [ref=e220]: Test User
+          - generic [ref=e221]:
+            - generic [ref=e222]: Status
+            - generic [ref=e223]: DELIVERED
+        - generic [ref=e225]:
+          - heading "Order Items" [level=4] [ref=e226]
+          - generic [ref=e227]:
+            - generic [ref=e228]: Margherita Pizza
+            - strong [ref=e230]: ×1
+  - generic [ref=e77]: Order status updated to DELIVERED
