@@ -8,8 +8,6 @@ Awesome Pizza is a pizza ordering web application with a Node.js/Express backend
 
 ### 1. Menu Display
 
-**Seed:** `tests/seed.spec.ts`
-
 #### 1.1. Daily menu loads and displays all items on page load
 
 **File:** `tests/menu/menu-display.spec.ts`
@@ -34,8 +32,6 @@ Awesome Pizza is a pizza ordering web application with a Node.js/Express backend
     - expect: No broken image icons are shown
 
 ### 2. Cart Interactions
-
-**Seed:** `tests/seed.spec.ts`
 
 #### 2.1. Adding items to the cart updates the cart display and total
 
@@ -91,8 +87,6 @@ Awesome Pizza is a pizza ordering web application with a Node.js/Express backend
 
 ### 3. Place Order
 
-**Seed:** `tests/seed.spec.ts`
-
 #### 3.1. Place Order button is disabled until both name and cart items are provided
 
 **File:** `tests/order/place-order-button-state.spec.ts`
@@ -147,8 +141,6 @@ Awesome Pizza is a pizza ordering web application with a Node.js/Express backend
     - expect: No order is placed
 
 ### 4. Order Management - Lookup
-
-**Seed:** `tests/seed.spec.ts`
 
 #### 4.1. Looking up an existing order by ID displays order details
 
@@ -218,8 +210,6 @@ Awesome Pizza is a pizza ordering web application with a Node.js/Express backend
 
 ### 5. Order Status Updates
 
-**Seed:** `tests/seed.spec.ts`
-
 #### 5.1. Mark a RECEIVED order as Delivering
 
 **File:** `tests/order-management/update-to-delivering.spec.ts`
@@ -262,8 +252,6 @@ Awesome Pizza is a pizza ordering web application with a Node.js/Express backend
 
 ### 6. Theme Toggle
 
-**Seed:** `tests/seed.spec.ts`
-
 #### 6.1. Toggling theme switches between light and dark mode
 
 **File:** `tests/theme/theme-toggle.spec.ts`
@@ -292,8 +280,6 @@ Awesome Pizza is a pizza ordering web application with a Node.js/Express backend
 
 ### 7. API - Daily Menu
 
-**Seed:** `tests/seed.spec.ts`
-
 #### 7.1. GET /api/daily-menu returns the menu successfully
 
 **File:** `tests/api/daily-menu.spec.ts`
@@ -306,8 +292,6 @@ Awesome Pizza is a pizza ordering web application with a Node.js/Express backend
     - expect: Each item has name, description, and imageUrl fields
 
 ### 8. API - Get Order
-
-**Seed:** `tests/seed.spec.ts`
 
 #### 8.1. GET /api/orders/:id returns an existing order
 
@@ -332,8 +316,6 @@ Awesome Pizza is a pizza ordering web application with a Node.js/Express backend
     - expect: Response body contains an error message indicating the order was not found
 
 ### 9. API - Create Order
-
-**Seed:** `tests/seed.spec.ts`
 
 #### 9.1. POST /api/orders creates a new order with valid data
 
@@ -399,8 +381,6 @@ Awesome Pizza is a pizza ordering web application with a Node.js/Express backend
 
 ### 10. API - Update Order
 
-**Seed:** `tests/seed.spec.ts`
-
 #### 10.1. PUT /api/orders/:id returns 401 without an authorization token
 
 **File:** `tests/api/update-order-unauthorized.spec.ts`
@@ -443,8 +423,6 @@ Awesome Pizza is a pizza ordering web application with a Node.js/Express backend
     - expect: Response message lists valid statuses: RECEIVED, DELIVERING, DELIVERED, CANCELED
 
 ### 11. API - Protected & Admin Routes
-
-**Seed:** `tests/seed.spec.ts`
 
 #### 11.1. GET /api/protected returns 200 with a valid bearer token
 
