@@ -9,20 +9,19 @@ test.describe('Menu Display', () => {
     await page.goto('http://localhost:3000');
 
     // 2. Intercept image requests to return a 404 error, then reload the page
-    await page.route('**/*.png', route => route.fulfill({ status: 404, body: '' }));
+    await page.route('**/assets/origs/**', route => route.fulfill({ status: 404 }));
     await page.reload();
 
-    const menuImages = page.locator('.menu-item img');
-    await expect(menuImages).toHaveCount(5);
+    const pizzas = ['Margherita Pizza', 'Pepperoni Pizza', 'Quattro Stagioni', 'Vegetarian Delight', 'BBQ Chicken Pizza'];
 
     // expect: A placeholder SVG image is rendered in place of each broken image
-    for (let i = 0; i < 5; i++) {
-      await expect(menuImages.nth(i)).toHaveAttribute('src', /^data:image\/svg\+xml/);
+    for (const pizza of pizzas) {
+      await expect(page.getByRole('img', { name: pizza })).toHaveAttribute('src', /^data:image\/svg\+xml;base64,/);
     }
 
-    // expect: No broken image icons are shown - all images are still visible in the DOM
-    for (let i = 0; i < 5; i++) {
-      await expect(menuImages.nth(i)).toBeVisible();
+    // expect: No broken image icons are shown
+    for (const pizza of pizzas) {
+      await expect(page.getByRole('img', { name: pizza })).toBeVisible();
     }
   });
 });

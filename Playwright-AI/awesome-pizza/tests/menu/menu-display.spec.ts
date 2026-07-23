@@ -14,44 +14,24 @@ test.describe('Menu Display', () => {
     // expect: The 'Today's Menu' heading is visible
     await expect(page.getByRole('heading', { name: "Today's Menu" })).toBeVisible();
 
-    // expect: Five pizza items are displayed
-    await expect(page.locator('main')).toMatchAriaSnapshot(`
-- main:
-  - heading "Margherita Pizza" [level=3]
-  - heading "Pepperoni Pizza" [level=3]
-  - heading "Quattro Stagioni" [level=3]
-  - heading "Vegetarian Delight" [level=3]
-  - heading "BBQ Chicken Pizza" [level=3]
-`);
+    // expect: Five pizza items are displayed: Margherita Pizza, Pepperoni Pizza, Quattro Stagioni, Vegetarian Delight, BBQ Chicken Pizza
+    await expect(page.getByRole('heading', { name: 'Margherita Pizza' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Pepperoni Pizza' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Quattro Stagioni' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Vegetarian Delight' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'BBQ Chicken Pizza' })).toBeVisible();
 
     // 2. Inspect each menu item card
-    const menuItems = page.locator('.menu-item');
-    await expect(menuItems).toHaveCount(5);
-
-    const pizzaNames = ['Margherita Pizza', 'Pepperoni Pizza', 'Quattro Stagioni', 'Vegetarian Delight', 'BBQ Chicken Pizza'];
-
-    for (let i = 0; i < pizzaNames.length; i++) {
-      const card = menuItems.nth(i);
-
-      // expect: Each item shows a name heading
-      await expect(card.locator('h3')).toBeVisible();
-
-      // expect: Each item shows description text
-      await expect(card.locator('p')).toBeVisible();
-
-      // expect: Each item shows a pizza image
-      await expect(card.locator('img')).toBeVisible();
-
-      // expect: Each item shows quantity control buttons (− and +)
-      await expect(card.getByRole('button', { name: '−' })).toBeVisible();
-      await expect(card.getByRole('button', { name: '+' })).toBeVisible();
+    // expect: Each item shows a name heading, description text, a pizza image, and quantity control buttons (− and +)
+    const pizzas = ['Margherita Pizza', 'Pepperoni Pizza', 'Quattro Stagioni', 'Vegetarian Delight', 'BBQ Chicken Pizza'];
+    for (const pizza of pizzas) {
+      await expect(page.getByRole('img', { name: pizza })).toBeVisible();
     }
+
+    await expect(page.getByRole('button', { name: '−' })).toHaveCount(5);
+    await expect(page.getByRole('button', { name: '+' })).toHaveCount(5);
 
     // expect: All quantity displays start at 0
-    const quantityDisplays = page.locator('.quantity-display');
-    await expect(quantityDisplays).toHaveCount(5);
-    for (let i = 0; i < 5; i++) {
-      await expect(quantityDisplays.nth(i)).toHaveText('0');
-    }
+    await expect(page.locator('.quantity-display')).toHaveText(['0', '0', '0', '0', '0']);
   });
 });

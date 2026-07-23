@@ -53,6 +53,7 @@ application behavior.
   - Includes a comment with the step text before each step execution. Do not duplicate comments if step requires
     multiple actions.
   - Always use best practices from the log when generating tests.
+  - DO NOT generate or use any kind of snapshot testing in the generated test code. Use assertions instead.
 
    <example-generation>
    For following plan:
