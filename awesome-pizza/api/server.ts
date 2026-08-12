@@ -270,9 +270,32 @@ app.put('/api/orders/:id', (req, res) => {
     }
 });
 
-// GET /api/protected - Requires a valid hardcoded token
+// Dummy credentials — for demo purposes only
+const USERS = [{ username: 'user', password: 'pass' }];
+
+// POST /api/login - Validate credentials and return a token
+app.post('/api/login', (req, res) => {
+    const { username, password } = req.body;
+    const match = USERS.find(u => u.username === username && u.password === password);
+    if (!match) {
+        res.status(401).json({ success: false, error: 'Invalid credentials' });
+        return;
+    }
+    res.status(200).json({ success: true, token: HARDCODED_TOKEN });
+});
+
+// GET /api/protected - Requires a valid token
 app.get('/api/protected', requireToken, (_req, res) => {
-    res.status(200).json({ success: true, message: 'Access granted to protected route' });
+    res.status(200).json({
+        success: true,
+        message: 'Access granted',
+        data: {
+            secretRecipes: ['Margherita Supreme', 'Dragon Pepperoni', 'Black Truffle Delight'],
+            staffDiscount: '50% off all pizzas',
+            vipCode: 'PIZZA-VIP-2024',
+            deliveryNote: 'Drivers use entrance B'
+        }
+    });
 });
 
 // GET /api/admin - Decodes token and checks for role: admin
